@@ -1,7 +1,7 @@
 {
-  "name": "restaurant-apps",
+  "name": "senja-bahagia",
   "version": "1.0.0",
-  "description": "",
+  "description": "Membantu untuk memcari tempat makan yang terkenal",
   "main": "index.js",
   "scripts": {
     "start-dev": "webpack-dev-server --config webpack.dev.js",

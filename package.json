@@ -1,7 +1,7 @@
 {
-  "name": "senja-bahagia",
+  "name": "U-nix-Resto",
   "version": "1.0.0",
-  "description": "Membantu untuk memcari tempat makan yang terkenal",
+  "description": "Membantu untuk memcari tempat makan yang unik",
   "main": "index.js",
   "scripts": {
     "start-dev": "webpack-dev-server --config webpack.dev.js",

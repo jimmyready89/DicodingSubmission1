@@ -49,8 +49,17 @@
 }
 
 @media screen and (min-width: 630px) {
-	.headline {
+	nav {
+		ul {
+			li {
+				a {
+					font-size: 16px;
+				}
+			}
+		}
+	}
 
+	.headline {
 		h1 , article h2{
 			font-size: 28px;
 			font-weight: 600;

@@ -22,7 +22,7 @@ window.addEventListener( "DOMContentLoaded" , () => {
 		drawer.classList.remove('open');
 	});
 
-	const { restaurants } = require('../Data.json');
+	const { restaurants } = require('../DATA.json');
 	restaurants.map( ( Data ) => {
 		const { city , description , name , pictureId , rating } = Data;
 

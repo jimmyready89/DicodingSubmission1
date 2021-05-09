@@ -27,7 +27,8 @@ window.addEventListener( "DOMContentLoaded" , () => {
 		const { city , description , name , pictureId , rating } = Data;
 
 		const ElementArticle = document.createElement( "article" );
-		ElementArticle.classList.add( "restaurant" )
+		ElementArticle.classList.add( "restaurant" );
+		ElementArticle.tabIndex = 0;
 
 		const ElementDivPanelImg = document.createElement( "div" );
 		ElementDivPanelImg.classList.add( "panel-img" );
@@ -37,6 +38,7 @@ window.addEventListener( "DOMContentLoaded" , () => {
 
 		const ElementDivCity = document.createElement( "div" );
 		ElementDivCity.innerHTML = city;
+		ElementDivCity.ariaLabel = `Kota ${ city },`;
 		ElementDivCity.classList.add( "city" );
 		ElementDivPanelTag.appendChild( ElementDivCity );
 
@@ -46,14 +48,16 @@ window.addEventListener( "DOMContentLoaded" , () => {
 		const ElementSpanStar = document.createElement( "span" );
 		ElementSpanStar.innerHTML = "&#9733; ";
 		ElementDivStar.appendChild( ElementSpanStar );
+
 		ElementDivStar.innerHTML += rating;
+		ElementDivStar.ariaLabel = `Rating ${ rating },`;
 		ElementDivPanelTag.appendChild( ElementDivStar );
 		
 		ElementDivPanelImg.appendChild( ElementDivPanelTag );
 
 		const ElementImg = document.createElement( "img" );
 		ElementImg.src = pictureId;
-		ElementImg.alt = `Resto ${ name } di kota ${ city }`;
+		ElementImg.alt = "";
 		ElementDivPanelImg.appendChild( ElementImg );
 
 		ElementArticle.appendChild( ElementDivPanelImg );
@@ -63,11 +67,13 @@ window.addEventListener( "DOMContentLoaded" , () => {
 		
 		const ElementH1 = document.createElement( "h2" );
 		ElementH1.classList.add( "title" );
+		ElementH1.ariaLabel = `Restoran ${ name },`;
 		ElementH1.innerHTML = name;
 		ElementDiv.appendChild( ElementH1 );
 
 		const ElementP = document.createElement( "p" );
 		ElementP.classList.add( "description" );
+		ElementP.ariaLabel = `Deskripsi ${ description }`;
 		ElementP.innerHTML = description;
 		ElementDiv.appendChild( ElementP );
 

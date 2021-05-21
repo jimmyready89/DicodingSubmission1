@@ -1,4 +1,6 @@
 const apiUrl = 'https://restaurant-api.dicoding.dev/';
+const BASE_IMAGE_URL = 'https://restaurant-api.dicoding.dev/images/';
+
 // Key: 'YOUR_API_KEY',
 // BASE_IMAGE_URL: 'https://image.tmdb.org/t/p/w500/',
 // DEFAULT_LANGUAGE: 'en-us',
@@ -10,4 +12,5 @@ const apiUrl = 'https://restaurant-api.dicoding.dev/';
 
 export {
   apiUrl,
+  BASE_IMAGE_URL,
 };

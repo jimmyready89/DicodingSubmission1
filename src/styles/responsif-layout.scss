@@ -68,31 +68,31 @@
 	}
 
 	.content {
-		.restaurants {
+		restaurants {
 			column-gap: 10px;
 			grid-template-columns: repeat(2, 1fr);
 
-			.restaurant {
+			restaurant {
 				img {
 					height: 225px;
 					width: 60%;
 				}
 
-				div.content {
+				content {
 					padding: 16px 15px 15px 15px;
-				}
+					
+					h2 {
+						font-weight: 500;
+						font-size: 21px;
+						margin-top: 16px;
+						transition: 0.3s opacity;
 
-				h2 {
-					font-weight: 500;
-					font-size: 21px;
-					margin-top: 16px;
-					transition: 0.3s opacity;
-
-				}
-				
-				p {
-					font-size: 13px;
-					line-height: 1.5em;
+					}
+					
+					p {
+						font-size: 13px;
+						line-height: 1.5em;
+					}
 				}
 			}
 		}
@@ -166,29 +166,29 @@
 	}
 
 	.content {
-		.restaurants {
+		restaurants {
 			column-gap: 10px;
 			grid-template-columns: repeat(3, 1fr);
 
-			.restaurant {
+			restaurant {
 				img {
 					height: 250px;
 				}
 
-				div.content {
+				content {
 					padding: 16px 32px 32px 32px;
-				}
-
-				h2 {
-					font-weight: 500;
-					font-size: 25px;
-					margin-top: 16px;
-					transition: 0.3s opacity;
-				}
-				
-				p {
-					font-size: 14px;
-					line-height: 1.5em;
+					
+					h2 {
+						font-weight: 500;
+						font-size: 25px;
+						margin-top: 16px;
+						transition: 0.3s opacity;
+					}
+					
+					p {
+						font-size: 14px;
+						line-height: 1.5em;
+					}
 				}
 			}
 		}

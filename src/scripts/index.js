@@ -9,4 +9,15 @@ window.addEventListener('DOMContentLoaded', () => {
     drawer: document.querySelector('#drawer'),
     content: document.querySelector('main'),
   });
+
+  window.addEventListener('hashchange', () => {
+    app.renderPage();
+  });
+
+  window.addEventListener('load', () => {
+    app.renderPage();
+    // swRegister();
+    // WebSocketInitiator.init(CONFIG.WEB_SOCKET_SERVER);
+  });
 });
+

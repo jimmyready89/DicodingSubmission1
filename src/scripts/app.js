@@ -1,5 +1,5 @@
-import DrawerInitiator from './utility/drawer';
-import UrlParser from './routes/url-parser';
+import drawerInitiator from './utility/drawer';
+import urlParser from './routes/url-parser';
 import routes from './routes/routes';
 
 class App {
@@ -12,7 +12,7 @@ class App {
   }
 
   initialAppShell() {
-    DrawerInitiator.init({
+    drawerInitiator.init({
       button: this.button,
       drawer: this.drawer,
       content: this.content,
@@ -20,7 +20,8 @@ class App {
   }
 
   async renderPage() {
-    const url = UrlParser.parseActiveUrlWithCombiner();
+    const url = urlParser.parseActiveUrlWithCombiner();
+    console.log(url);
     const page = routes[url];
     this.content.innerHTML = await page.render();
     await page.afterRender();

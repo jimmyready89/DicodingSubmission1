@@ -1,6 +1,7 @@
 import urlParser from '../../routes/url-parser';
 import { restaurantDetailAPI } from '../../data/api';
 import { createRestaurantDetailTemplate } from '../templates/template-ui';
+import reviewInitiator from '../../utility/review';
 
 const restaurantDetail = {
   async render() {
@@ -18,6 +19,11 @@ const restaurantDetail = {
     // console.log( restaurantDetailResault )
     const restaurantContainer = document.querySelector('div#restaurant-detail');
     restaurantContainer.innerHTML = await createRestaurantDetailTemplate(restaurantDetailResault);
+
+    reviewInitiator.init({
+      riviewElemenet: document.querySelector('review-box'),
+      restaurantDetailData: restaurantDetailResault.restaurant
+    });
 
     // LikeButtonInitiator.init({
     //   likeButtonContainer: document.querySelector('#likeButtonContainer'),

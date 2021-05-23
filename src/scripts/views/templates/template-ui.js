@@ -117,7 +117,7 @@ const createRestaurantDetailTemplate = async (restorant) => {
           <h2>
             Review
           </h2>
-          <div class="review-box">
+          <review-box>
             <loading-screen>
               <div class="loading">
                 <div></div><div></div><div></div><div></div>
@@ -126,7 +126,7 @@ const createRestaurantDetailTemplate = async (restorant) => {
                 Loading ...
               </loading-text>
             </loading-screen>
-          </div>
+          </review-box>
        </content-wihtout-padding>
       </restaurant>
     </restaurants>

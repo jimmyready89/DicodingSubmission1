@@ -1,10 +1,16 @@
-import { restoListUrl } from './api-url';
+import { restoListUrl, restoDetailUrl } from './api-url';
 
-const restaurantList = async () => {
-  const apiRessult = await fetch( restoListUrl );
-  return apiRessult.json();
+const restaurantListAPI = async () => {
+  const apiResult = await fetch(restoListUrl);
+  return apiResult.json();
+};
+
+const restaurantDetailAPI = async (id) => {
+  const apiResult = await fetch(`${restoDetailUrl}/${id}`);
+  return apiResult.json();
 };
 
 export {
-  restaurantList,
+  restaurantListAPI,
+  restaurantDetailAPI,
 };

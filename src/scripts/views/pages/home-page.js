@@ -1,11 +1,12 @@
-import { restaurantList } from '../../data/api';
+import { restaurantListAPI } from '../../data/api';
 import { createRestaurantTemplate } from '../templates/template-ui';
+
 const homePage = {
   async render() {
     return `
       <div class="banner">
         <div tabindex="0">
-          <h1>
+          <h1 class="title">
             Jelajahi Restoran Menarik
           </h1>
           <p>
@@ -14,7 +15,7 @@ const homePage = {
         </div>
       </div>
       <div class="headline">
-        <h1 tabindex="0">
+        <h1 class="title" tabindex="0">
           Tempat Menarik Yang Bagus Untuk Dikunjungin
         </h1>
         <article>
@@ -50,11 +51,10 @@ const homePage = {
   },
 
   async afterRender() {
-    const restaurantsData = await restaurantList();
+    const restaurantsData = await restaurantListAPI();
     const restoranElement = document.querySelector('#restaurant-list');
     // console.log(restaurant)
     restaurantsData.restaurants.forEach((restaurant) => {
-      console.log(restaurant)
       restoranElement.innerHTML += createRestaurantTemplate(restaurant);
     });
   },

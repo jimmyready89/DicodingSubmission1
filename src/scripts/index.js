@@ -20,4 +20,3 @@ window.addEventListener('DOMContentLoaded', () => {
     // WebSocketInitiator.init(CONFIG.WEB_SOCKET_SERVER);
   });
 });
-

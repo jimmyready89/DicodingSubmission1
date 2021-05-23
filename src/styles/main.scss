@@ -1,3 +1,5 @@
+@import 'loading';
+
 $backgroundcolor : #dfdfdf;
 $panelcolor : #f4f3f3;
 $headerfootercoler : #bfd8d5;
@@ -226,6 +228,13 @@ main {
 	}
 }
 
+star {
+	&::before {
+		font-size: 17px;
+		content: '\2605   ';
+	}
+}
+
 .content {
 	padding: 0px 3px;
 
@@ -276,10 +285,6 @@ main {
 						font-size: $tagfont;
 						background-color: #f39c12;
 						padding: 5.5px 6px 6px 6px;
-						
-						&::before {
-							content: '\2605 ';
-						}
 					}
 				}
 
@@ -289,7 +294,10 @@ main {
 			}
 
 			content {
-				padding: 14px 8px 8px 8px;
+				padding: 0px 8px 8px 8px;
+			}
+
+			content, content-wihtout-padding {
 				display: block;
 			
 				h2 {
@@ -308,8 +316,24 @@ main {
 					font-size: 14px;
 					line-height: 1.5em;
 				}
-			}
 
+				ul {
+					padding: 6px 0 0 15px;
+					font-size: 14px;
+					list-style: disclosure-closed;
+				
+					li {
+						margin-bottom: 5px;
+					}
+				}
+
+			}
+			
+			content-wihtout-padding {
+				h2 {
+					text-align: center;
+				}
+			}
 		}
 	}
 }

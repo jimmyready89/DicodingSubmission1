@@ -40,9 +40,9 @@ header {
 		width: 100%;
 		height: 100%;
 		border: unset;
-		padding: 5px 0px;
+		padding: 5px 0;
 		font-size: 32px;
-		margin: 0px auto;
+		margin: 0 auto;
 		background-color: $headerfootercoler;
 
 		&:hover{
@@ -141,12 +141,12 @@ nav {
 	}
 
 	h1 {
-		margin: 25px 0px;
+		margin: 25px 0;
 		font-size: 25px;
 	}
 
 	article {
-		padding: 0px 13px;
+		padding: 0 13px;
 		display: grid;
 		grid-template-columns: repeat(1, 1fr);
 
@@ -158,7 +158,7 @@ nav {
 
 			img {
 				width: 100%;
-				margin: 0px auto;
+				margin: 0 auto;
 
 				&:last-child {
 					display: none;
@@ -168,10 +168,10 @@ nav {
 
 		.content {
 			width: 100%;
-			padding: 16px 0px;
+			padding: 16px 0;
 			
 			h2 {
-				margin: 5px 0px 15px 0px;
+				margin: 5px 0 15px 0;
 				font-size: 25px;
 				font-weight: 500;
 			}
@@ -236,7 +236,7 @@ star {
 }
 
 .content {
-	padding: 0px 3px;
+	padding: 0 3px;
 
 	restaurants {
 		display: grid;
@@ -294,7 +294,7 @@ star {
 			}
 
 			content {
-				padding: 0px 8px 8px 8px;
+				padding: 0 8px 8px 8px;
 			}
 
 			content, content-wihtout-padding {
@@ -365,4 +365,33 @@ footer {
 
 review-box {
 	display: block;
+	width: 100%;
+	margin: 10px 0 0 0;
+
+	review-row {
+		padding: 8px;
+		display: block;
+		border: 1px solid black;
+
+		&:last-child {
+			border-bottom:unset;
+		}
+	}
+
+	name{
+		font-weight: 600;
+		font-size: 17px;
+		display: block;
+	}
+
+	review{
+		font-size: 12px;
+		display: block;
+		padding: 4px 0;
+	}
+
+	date{
+		display: block;
+		text-align: right;
+	}
 }

@@ -2,6 +2,7 @@ import urlParser from '../../routes/url-parser';
 import { restaurantDetailAPI } from '../../data/api';
 import { createRestaurantDetailTemplate } from '../templates/template-ui';
 import reviewInitiator from '../../utility/review';
+import buttonLikeInitiator from '../../utility/button-like';
 
 const restaurantDetail = {
   async render() {
@@ -22,19 +23,13 @@ const restaurantDetail = {
 
     reviewInitiator.init({
       riviewElemenet: document.querySelector('review-box'),
-      restaurantDetailData: restaurantDetailResault.restaurant
+      restaurantDetailData: restaurantDetailResault.restaurant,
     });
 
-    // LikeButtonInitiator.init({
-    //   likeButtonContainer: document.querySelector('#likeButtonContainer'),
-    //   movie: {
-    //     id: movie.id,
-    //     title: movie.title,
-    //     overview: movie.overview,
-    //     backdrop_path: movie.backdrop_path,
-    //     vote_average: movie.vote_average,
-    //   },
-    // });
+    buttonLikeInitiator.init({
+      elemeentButton: document.querySelector('#likeButtonContainer'),
+      restaurantDetail: restaurantDetailResault.restaurant,
+    });
   },
 };
 

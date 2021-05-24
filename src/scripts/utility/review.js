@@ -2,9 +2,8 @@
 
 const reviewCommentFilter = (Comment) => {
   let status = true;
-  console.log(Comment);
+
   const forbidentString = /(div)/gi;
-  console.log(Comment.match(forbidentString));
   if (Comment.match(forbidentString)) {
     status = false;
   }

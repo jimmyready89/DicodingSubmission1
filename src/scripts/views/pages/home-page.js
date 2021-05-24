@@ -53,7 +53,7 @@ const homePage = {
   async afterRender() {
     const restaurantsData = await restaurantListAPI();
     const restoranElement = document.querySelector('#restaurant-list');
-    // console.log(restaurant)
+
     restaurantsData.restaurants.forEach((restaurant) => {
       restoranElement.innerHTML += createRestaurantTemplate(restaurant);
     });

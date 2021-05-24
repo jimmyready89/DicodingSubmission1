@@ -32,7 +32,6 @@ const createRestaurantTemplate = (restorant) => {
 const convertArrayToElementLi = (MenuList) => MenuList.map((menu) => menu.name).join('</li><li>');
 
 const createRestaurantDetailTemplate = async (restorant) => {
-  // console.log(restorant)
   const {
     city, description,
     name, pictureId, rating,
@@ -43,7 +42,6 @@ const createRestaurantDetailTemplate = async (restorant) => {
     drinks, foods,
   } = menus;
 
-  console.log(restorant.restaurant);
   const drinkElementLi = await convertArrayToElementLi(drinks);
   const foodElementLi = await convertArrayToElementLi(foods);
   const categorie = await convertArrayToElementLi(categories);
@@ -133,17 +131,17 @@ const createRestaurantDetailTemplate = async (restorant) => {
   `;
 };
 
-// const createLikeButtonTemplate = () => `
-//   <button aria-label='like this movie' id='likeButton' class='like'>
-//      <i class='fa fa-heart-o' aria-hidden='true'></i>
-//   </button>
-// `;
+const createLikeButtonTemplate = () => `
+  <button aria-label='like this movie' id='likeButton' class='like'>
+     <i class='fa fa-heart-o' aria-hidden='true'></i>
+  </button>
+`;
 
-// const createLikedButtonTemplate = () => `
-//   <button aria-label='unlike this movie' id='likeButton' class='like'>
-//     <i class='fa fa-heart' aria-hidden='true'></i>
-//   </button>
-// `;
+const createLikedButtonTemplate = () => `
+  <button aria-label='unlike this movie' id='likeButton' class='like'>
+    <i class='fa fa-heart' aria-hidden='true'></i>
+  </button>
+`;
 
 export {
   createRestaurantTemplate,

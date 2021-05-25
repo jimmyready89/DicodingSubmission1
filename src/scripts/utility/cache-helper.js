@@ -17,7 +17,6 @@ const CacheHelper = {
     const response = await caches.match(request);
 
     if (response) {
-      this.fetchRequest(request);
       return response;
     }
     return this.fetchRequest(request);
@@ -34,7 +33,7 @@ const CacheHelper = {
       return response;
     }
 
-    this.addCache(request);
+    await this.addCache(request);
     return response;
   },
 

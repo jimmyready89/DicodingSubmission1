@@ -9,26 +9,43 @@ const restaurantDetail = {
     return `
       <section class="content">
         <div class="latest" id="restaurant-detail">
+          <loading-screen>
+            <div class="loading">
+              <div></div><div></div><div></div><div></div>
+            </div>
+            <loading-text>
+              Loading Detail Restoran ...
+            </loading-text>
+          </loading-screen>
         </div>
       </section>
     `;
   },
 
   async afterRender() {
-    const url = urlParser.parseActiveUrlWithoutCombiner();
-    const restaurantDetailResault = await restaurantDetailAPI(url.id);
     const restaurantContainer = document.querySelector('div#restaurant-detail');
-    restaurantContainer.innerHTML = await createRestaurantDetailTemplate(restaurantDetailResault);
 
-    reviewInitiator.init({
-      riviewElemenet: document.querySelector('review-box'),
-      restaurantDetailData: restaurantDetailResault.restaurant,
-    });
+    try {
+      const url = urlParser.parseActiveUrlWithoutCombiner();
+      const restaurantDetailResault = await restaurantDetailAPI(url.id);
+      restaurantContainer.innerHTML = await createRestaurantDetailTemplate(restaurantDetailResault);
 
-    buttonLikeInitiator.init({
-      elemeentButton: document.querySelector('container-button-like'),
-      restaurantDetail: restaurantDetailResault.restaurant,
-    });
+      reviewInitiator.init({
+        riviewElemenet: document.querySelector('review-box'),
+        restaurantDetailData: restaurantDetailResault.restaurant,
+      });
+
+      buttonLikeInitiator.init({
+        elemeentButton: document.querySelector('container-button-like'),
+        restaurantDetail: restaurantDetailResault.restaurant,
+      });
+    } catch {
+      restaurantContainer.innerHTML = `
+        <error-message>
+          Data Gagal dimuat
+        </error-message>
+      `;
+    }
   },
 };
 

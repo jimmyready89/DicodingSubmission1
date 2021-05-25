@@ -44,6 +44,14 @@ const homePage = {
             Daftar Restoran
           </h1>
           <restaurants id="restaurant-list">
+            <loading-screen>
+              <div class="loading">
+                <div></div><div></div><div></div><div></div>
+              </div>
+              <loading-text>
+                Loading ...
+              </loading-text>
+            </loading-screen>
           </restaurants>
         </div>
       </section>
@@ -51,12 +59,30 @@ const homePage = {
   },
 
   async afterRender() {
-    const restaurantsData = await restaurantListAPI();
     const restoranElement = document.querySelector('#restaurant-list');
 
-    restaurantsData.restaurants.forEach((restaurant) => {
-      restoranElement.innerHTML += createRestaurantTemplate(restaurant);
-    });
+    try {
+      const restaurantsData = await restaurantListAPI();
+      restoranElement.innerHTML = '';
+
+      if (restaurantsData.restaurants.length > 0) {
+        restaurantsData.restaurants.forEach((restaurant) => {
+          restoranElement.innerHTML += createRestaurantTemplate(restaurant);
+        });
+      } else {
+        restoranElement.innerHTML = `
+          <error-message>
+            Tidak terdapat data
+          </error-message>
+        `;
+      }
+    } catch {
+      restoranElement.innerHTML = `
+        <error-message>
+          Data Gagal dimuat
+        </error-message>
+      `;
+    }
   },
 };
 

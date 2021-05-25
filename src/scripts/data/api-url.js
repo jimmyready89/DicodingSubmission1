@@ -1,7 +1,7 @@
-import { apiUrl } from '../config';
+import { API_URL } from '../config';
 
-const restoListUrl = `${apiUrl}list`;
-const restoDetailUrl = `${apiUrl}detail`;
+const restoListUrl = `${API_URL}list`;
+const restoDetailUrl = `${API_URL}detail`;
 
 export {
   restoListUrl,

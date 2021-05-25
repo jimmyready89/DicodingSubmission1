@@ -17,13 +17,16 @@ const createRestaurantTemplate = (restorant) => {
        </panel-img>
        <content>
           <h2>
-            <a href="#/restaurantdetail/${id}">
-              ${name}
-            </a>
+            ${name}
           </h2>
           <p class="description">
             ${description}
           </p>
+          <button-detail>
+            <a href="#/restaurantdetail/${id}">
+              Lihat Detail
+            </a>
+          </button-detail>
        </content>
     </restaurant>
   `;

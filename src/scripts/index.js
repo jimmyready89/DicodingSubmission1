@@ -1,6 +1,7 @@
-import 'regenerator-runtime'; /* for async await transpile */
-import '../styles/main.scss';
-import '../styles/responsif-layout.scss';
+import 'regenerator-runtime';
+import '../styles/scss/main.scss';
+import '../styles/scss/responsif-layout.scss';
+import '../styles/scss/font-awesome.scss';
 import swRegister from './utility/sw-register';
 
 import App from './app';

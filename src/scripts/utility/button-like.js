@@ -1,4 +1,5 @@
 import favoriteRestaurantIdb from '../data/favorite-restaurant-idb';
+import { createLikeButton, createUnlikeButton } from '../views/templates/template-ui';
 
 const buttonLikeInitiator = {
   async init({ elemeentButton, restaurantDetail }) {
@@ -11,9 +12,9 @@ const buttonLikeInitiator = {
     const { id } = this.restaurantDetail;
 
     if (await this.isRestaurantExist(id)) {
-      // this.renderUnlike();
+      this.renderUnlike();
     } else {
-      // this.renderLike();
+      this.renderLike();
     }
   },
 
@@ -22,25 +23,25 @@ const buttonLikeInitiator = {
     return !!movie;
   },
 
-  // renderLike() {
-  //   this._likeButtonContainer.innerHTML = createLikeButtonTemplate();
+  renderLike() {
+    this.elemeentButton.innerHTML = createLikeButton();
 
-  //   const likeButton = document.querySelector('#likeButton');
-  //   likeButton.addEventListener('click', async () => {
-  //     await FavoriteMovieIdb.putMovie(this._movie);
-  //     this.render();
-  //   });
-  // },
+    const likeButton = document.querySelector('#likeButton');
+    likeButton.addEventListener('click', async () => {
+      await favoriteRestaurantIdb.putRestaurant(this.restaurantDetail);
+      this.render();
+    });
+  },
 
-  // renderUnlike() {
-  //   this._likeButtonContainer.innerHTML = createLikedButtonTemplate();
+  renderUnlike() {
+    this.elemeentButton.innerHTML = createUnlikeButton();
 
-  //   const likeButton = document.querySelector('#likeButton');
-  //   likeButton.addEventListener('click', async () => {
-  //     await FavoriteMovieIdb.deleteMovie(this._movie.id);
-  //     this.render();
-  //   });
-  // },
+    const likeButton = document.querySelector('#likeButton');
+    likeButton.addEventListener('click', async () => {
+      await favoriteRestaurantIdb.deleteRestaurant(this.restaurantDetail.id);
+      this.render();
+    });
+  },
 };
 
 export default buttonLikeInitiator;

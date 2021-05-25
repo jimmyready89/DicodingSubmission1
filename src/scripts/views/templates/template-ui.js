@@ -53,6 +53,8 @@ const createRestaurantDetailTemplate = async (restorant) => {
     <restaurants>
       <restaurant tabindex="0" aria-label="">
        <panel-img>
+          <container-button-like>
+          </container-button-like>
           <img src="${BASE_IMAGE_URL}medium/${pictureId}" alt="${name}">
        </panel-img>
        <content>
@@ -131,19 +133,21 @@ const createRestaurantDetailTemplate = async (restorant) => {
   `;
 };
 
-const createLikeButtonTemplate = () => `
-  <button aria-label='like this movie' id='likeButton' class='like'>
-     <i class='fa fa-heart-o' aria-hidden='true'></i>
+const createLikeButton = () => `
+  <button aria-label='suka dengan restaurant ini' id='likeButton' class='like'>
+    <i class="fa fa-heart-o" aria-hidden="true"></i>
   </button>
 `;
 
-const createLikedButtonTemplate = () => `
-  <button aria-label='unlike this movie' id='likeButton' class='like'>
-    <i class='fa fa-heart' aria-hidden='true'></i>
+const createUnlikeButton = () => `
+  <button aria-label='tidak suka dengan restaurant ini' id='likeButton' class='like'>
+    <i class="fa fa-heart" aria-hidden="true"></i>
   </button>
 `;
 
 export {
   createRestaurantTemplate,
   createRestaurantDetailTemplate,
+  createLikeButton,
+  createUnlikeButton,
 };

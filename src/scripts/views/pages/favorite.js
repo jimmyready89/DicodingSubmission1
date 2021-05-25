@@ -1,3 +1,6 @@
+import favoriteRestaurantIdb from '../../data/favorite-restaurant-idb';
+import { createRestaurantTemplate } from '../templates/template-ui';
+
 const favorite = {
   async render() {
     return `
@@ -6,20 +9,20 @@ const favorite = {
           <h1 tabindex="0">
             Favorite
           </h1>
-          <div class="restaurants" id="restaurant-list">
-          </div>
+          <restaurants id="restaurant-list">
+          </restaurants>
         </div>
       </section>
     `;
   },
 
-  // async afterRender() {
-  //   const movies = await FavoriteMovieIdb.getAllMovies();
-  //   const moviesContainer = document.querySelector('#movies');
-  //   movies.forEach((movie) => {
-  //     moviesContainer.innerHTML += createMovieItemTemplate(movie);
-  //   });
-  // },
+  async afterRender() {
+    const restaurantList = await favoriteRestaurantIdb.getAllRestaurants();
+    const restaurantContainer = document.querySelector('#restaurant-list');
+    restaurantList.forEach((restaurant) => {
+      restaurantContainer.innerHTML += createRestaurantTemplate(restaurant);
+    });
+  },
 };
 
 export default favorite;

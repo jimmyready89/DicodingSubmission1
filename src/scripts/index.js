@@ -1,6 +1,8 @@
 import 'regenerator-runtime'; /* for async await transpile */
 import '../styles/main.scss';
 import '../styles/responsif-layout.scss';
+import swRegister from './utility/sw-register';
+
 import App from './app';
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -16,7 +18,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
   window.addEventListener('load', () => {
     app.renderPage();
-    // swRegister();
-    // WebSocketInitiator.init(CONFIG.WEB_SOCKET_SERVER);
+    swRegister();
   });
 });

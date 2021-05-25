@@ -1,16 +1,5 @@
 // import { restaurantDetailAPI } from '../data/api';
 
-const reviewCommentFilter = (Comment) => {
-  let status = true;
-
-  const forbidentString = /(div)/gi;
-  if (Comment.match(forbidentString)) {
-    status = false;
-  }
-
-  return status;
-};
-
 const reviewInitiator = {
   async init({ riviewElemenet, restaurantDetailData }) {
     this.riviewElemenet = riviewElemenet;
@@ -20,38 +9,36 @@ const reviewInitiator = {
   },
 
   createReviewRow(riviewData) {
-    let returnelement = '';
     const {
       date, name, review,
     } = riviewData;
 
-    if (reviewCommentFilter(review)) {
-      returnelement = `
-        <review-row>
-          <name>
-            ${name}
-          </name>
-          <review>
-            ${review}
-          </review>
-          <date>
-            ${date}
-          </date>
-        </review-row>
-      `;
-    }
+    const reviewRowTag = document.createElement('review-row');
 
-    return returnelement;
+    const nameTag = document.createElement('name');
+    nameTag.innerText = name;
+    reviewRowTag.appendChild(nameTag);
+
+    const reviewTag = document.createElement('review');
+    reviewTag.innerText = review;
+    reviewRowTag.appendChild(reviewTag);
+
+    const dateTag = document.createElement('date');
+    dateTag.innerText = date;
+    reviewRowTag.appendChild(dateTag);
+
+    return reviewRowTag;
   },
 
   async render() {
     this.restaurantDetailData.customerReviews.forEach((riviewData, riviewIndex) => {
       const element = this.createReviewRow(riviewData);
+
       if (riviewIndex === 0) {
-        this.riviewElemenet.innerHTML = element;
-      } else {
-        this.riviewElemenet.innerHTML += element;
+        this.riviewElemenet.innerHTML = '';
       }
+
+      this.riviewElemenet.appendChild(element);
     });
   },
 };

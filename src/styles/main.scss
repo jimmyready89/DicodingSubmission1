@@ -368,10 +368,14 @@ review-box {
 	width: 100%;
 	margin: 10px 0 0 0;
 
+	height: 600px;
+	overflow-x: auto;
+	border: 1px solid black;
+
 	review-row {
 		padding: 8px;
 		display: block;
-		border: 1px solid black;
+		border-bottom: 1px solid black;
 
 		&:last-child {
 			border-bottom:unset;
@@ -393,5 +397,23 @@ review-box {
 	date{
 		display: block;
 		text-align: right;
+	}
+}
+
+container-button-like{
+	display: block;
+	position:absolute;
+	text-align: right;
+	bottom: -24px;
+	right: 21px;
+
+	button.like {
+		cursor: pointer;
+		font-size: 20px;
+		padding:15px 15px;
+		border: unset;
+		background-color:red;
+		color: white;
+		border-radius:50%;
 	}
 }

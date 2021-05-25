@@ -17,7 +17,6 @@ const restaurantDetail = {
   async afterRender() {
     const url = urlParser.parseActiveUrlWithoutCombiner();
     const restaurantDetailResault = await restaurantDetailAPI(url.id);
-    // console.log( restaurantDetailResault )
     const restaurantContainer = document.querySelector('div#restaurant-detail');
     restaurantContainer.innerHTML = await createRestaurantDetailTemplate(restaurantDetailResault);
 
@@ -27,7 +26,7 @@ const restaurantDetail = {
     });
 
     buttonLikeInitiator.init({
-      elemeentButton: document.querySelector('#likeButtonContainer'),
+      elemeentButton: document.querySelector('container-button-like'),
       restaurantDetail: restaurantDetailResault.restaurant,
     });
   },

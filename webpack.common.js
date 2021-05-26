@@ -2,7 +2,7 @@ const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const ServiceWorkerWebpackPlugin = require('serviceworker-webpack-plugin');
+const WorkboxPlugin = require('workbox-webpack-plugin');
 const path = require('path');
 
 module.exports = {
@@ -52,8 +52,31 @@ module.exports = {
         },
       ],
     }),
-    new ServiceWorkerWebpackPlugin({
-      entry: path.resolve(__dirname, 'src/scripts/sw.js'),
+    new WorkboxPlugin.GenerateSW({
+      clientsClaim: true,
+      skipWaiting: true,
+      maximumFileSizeToCacheInBytes: 5000000,
+      runtimeCaching: [{
+        urlPattern: /https:\/\/restaurant-api\.dicoding\.dev\/(list|detail)/,
+        handler: 'StaleWhileRevalidate',
+        options: {
+          cacheName: 'restaurant-api-dicoding-dev',
+          expiration: {
+            maxAgeSeconds: 60 * 60 * 24,
+          },
+          cacheableResponse: { statuses: [200] },
+        },
+      },
+      {
+        urlPattern: /https:\/\/restaurant-api\.dicoding\.dev\/images/,
+        handler: 'StaleWhileRevalidate',
+        options: {
+          cacheName: 'restaurant-api-dicoding-dev-images',
+          expiration: {
+            maxAgeSeconds: 60 * 60 * 24,
+          },
+        },
+      }],
     }),
   ],
 };

@@ -27,8 +27,8 @@ const buttonLikeInitiator = {
     this.elemeentButton.innerHTML = createLikeButton();
 
     const likeButton = document.querySelector('#likeButton');
-    likeButton.addEventListener('click', async () => {
-      await favoriteRestaurantIdb.putRestaurant(this.restaurantDetail);
+    likeButton.addEventListener('click', () => {
+      favoriteRestaurantIdb.putRestaurant(this.restaurantDetail);
       this.render();
     });
   },

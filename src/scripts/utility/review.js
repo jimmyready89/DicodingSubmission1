@@ -1,5 +1,3 @@
-// import { restaurantDetailAPI } from '../data/api';
-
 const reviewInitiator = {
   async init({ riviewElemenet, restaurantDetailData }) {
     this.riviewElemenet = riviewElemenet;

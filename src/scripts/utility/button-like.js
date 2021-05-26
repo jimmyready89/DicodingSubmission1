@@ -19,8 +19,8 @@ const buttonLikeInitiator = {
   },
 
   async isRestaurantExist(id) {
-    const movie = await favoriteRestaurantIdb.getRestaurant(id);
-    return !!movie;
+    const restaurant = await favoriteRestaurantIdb.getRestaurant(id);
+    return !!restaurant;
   },
 
   renderLike() {

@@ -29,7 +29,7 @@ const favorite = {
 
     try {
       const restaurantList = await favoriteRestaurantIdb.getAllRestaurants();
-      restaurantContainer.innerHTML = "";
+      restaurantContainer.innerHTML = '';
       if (restaurantList.length > 0) {
         restaurantList.forEach((restaurant) => {
           restaurantContainer.innerHTML += createRestaurantTemplate(restaurant);

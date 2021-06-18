@@ -2,6 +2,8 @@ import 'regenerator-runtime';
 import '../styles/scss/main.scss';
 import '../styles/scss/responsif-layout.scss';
 import swRegister from './utility/service-worker-register';
+import 'lazysizes';
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 
 import App from './app';
 

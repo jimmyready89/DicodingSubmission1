@@ -13,7 +13,7 @@ const createRestaurantTemplate = (restorant) => {
              <city>${city}</city>
              <star>${rating}</star>
           </panel-tag>
-          <img src="${BASE_IMAGE_URL}medium/${pictureId}" alt="${name}">
+          <img class="lazyload" src="${BASE_IMAGE_URL}medium/${pictureId}" alt="${name}">
        </panel-img>
        <content>
           <h2>
@@ -58,7 +58,7 @@ const createRestaurantDetailTemplate = async (restorant) => {
        <panel-img>
           <container-button-like>
           </container-button-like>
-          <img src="${BASE_IMAGE_URL}medium/${pictureId}" alt="${name}">
+          <img class="lazyload" src="${BASE_IMAGE_URL}medium/${pictureId}" alt="${name}">
        </panel-img>
        <content>
           <h2>
@@ -91,7 +91,7 @@ const createRestaurantDetailTemplate = async (restorant) => {
       </restaurant>
       <restaurant tabindex="0" aria-label="">
        <panel-img>
-          <img src="images/illustration/foodanddrink.jpg" alt="Gambar Ilustrasi Makana dan Minuman">
+          <img class="lazyload" src="images/illustration/foodanddrink.jpg" alt="Gambar Ilustrasi Makana dan Minuman">
        </panel-img>
        <content>
           <h2>
@@ -114,7 +114,7 @@ const createRestaurantDetailTemplate = async (restorant) => {
       </restaurant>
       <restaurant tabindex="0" aria-label="">
        <panel-img>
-          <img src="images/illustration/review.jpg" alt="Gambar Ilustrasi Review">
+          <img class="lazyload" src="images/illustration/review.jpg" alt="Gambar Ilustrasi Review">
        </panel-img>
        <content-wihtout-padding>
           <h2>

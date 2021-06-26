@@ -5,7 +5,8 @@ const buttonLikeInitiator = {
   async init({ elemeentButton, restaurantDetail }) {
     this.elemeentButton = elemeentButton;
     this.restaurantDetail = restaurantDetail;
-    this.render();
+    
+    await this.render();
   },
 
   async render() {

@@ -264,8 +264,6 @@ star {
 					position: absolute;
 					display: flex;
 
-					$tagfont: 14px;
-
 					> * {
 						color: #fff;
 						border-radius: 25%;
@@ -274,15 +272,12 @@ star {
 					}
 
 					city {
-						font-size: $tagfont;
 						background-color: #dd4b39;
-						font-size: $tagfont;
 						padding: 9px 7px 7px 7px;
 						margin-right: 7px; 
 					}
 
 					star {
-						font-size: $tagfont;
 						background-color: #f39c12;
 						padding: 5.5px 6px 6px 6px;
 					}

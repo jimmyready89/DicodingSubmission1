@@ -2,7 +2,8 @@
     "env": {
         "browser": true,
         "es2021": true,
-        "node": true
+        "node": true,
+        "jasmine": true
     },
     "extends": [
         "airbnb-base"
@@ -19,5 +20,6 @@
         "linebreak-style": 0,
         "import/prefer-default-export": 0,
         "console-no": 0
-    }
+    },
+    "plugins": ["jasmine"]
 }

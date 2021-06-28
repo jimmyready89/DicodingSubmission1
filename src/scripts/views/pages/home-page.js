@@ -19,10 +19,10 @@ const homePage = {
           Tempat Menarik Yang Bagus Untuk Dikunjungin
         </h1>
         <article>
-          <figure>
+          <div class="figure">
             <img src="images/logo/header1.png" alt="Resto Hause Setiabudi">
             <img src="images/logo/header2.jpeg" alt="Resto Hause Setiabudi">
-          </figure>
+          </div>
           <div class="content">
             <h2 tabindex="0">
               Hause Setiabudi
@@ -43,16 +43,16 @@ const homePage = {
           <h1 tabindex="0">
             Daftar Restoran
           </h1>
-          <restaurants id="restaurant-list">
-            <loading-screen>
+          <div class="restaurants" id="restaurant-list">
+            <div class="loading-screen">
               <div class="loading">
                 <div></div><div></div><div></div><div></div>
               </div>
-              <loading-text>
+              <div class="loading-text">
                 Loading ...
-              </loading-text>
-            </loading-screen>
-          </restaurants>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     `;
@@ -71,16 +71,16 @@ const homePage = {
         });
       } else {
         restoranElement.innerHTML = `
-          <error-message>
+          <span class="error-message">
             Tidak terdapat data
-          </error-message>
+          </span>
         `;
       }
     } catch {
       restoranElement.innerHTML = `
-        <error-message>
+        <span class="error-message">
           Data Gagal dimuat
-        </error-message>
+        </span>
       `;
     }
   },

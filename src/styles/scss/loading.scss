@@ -1,4 +1,4 @@
-loading-screen {
+.loading-screen {
   text-align: center;
   width: 100%;
   display: block;
@@ -44,7 +44,7 @@ loading-screen {
     }
   }
 
-  loading-text{
+  .loading-text{
     display: block;
     font-size: 20px;
   }

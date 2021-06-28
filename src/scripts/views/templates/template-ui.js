@@ -7,28 +7,28 @@ const createRestaurantTemplate = (restorant) => {
   } = restorant;
 
   return `
-    <restaurant tabindex="0" aria-label="">
-       <panel-img>
-          <panel-tag>
-             <city>${city}</city>
-             <star>${rating}</star>
-          </panel-tag>
+    <div class="restaurant" tabindex="0" aria-label="">
+       <div class="panel-img">
+          <div class="panel-tag">
+             <span class="city">${city}</span>
+             <span class="star">${rating}</span>
+          </div>
           <img class="lazyload" src="${BASE_IMAGE_URL}medium/${pictureId}" alt="${name}">
-       </panel-img>
-       <content>
+       </div>
+       <div class="content">
           <h2>
             ${name}
           </h2>
           <p class="description">
             ${description}
           </p>
-          <button-detail>
+          <div class="button-detail">
             <a href="#/restaurantdetail/${id}">
               Lihat Detail
             </a>
-          </button-detail>
-       </content>
-    </restaurant>
+          </div>
+       </div>
+    </div>
   `;
 };
 
@@ -53,19 +53,19 @@ const createRestaurantDetailTemplate = async (restorant) => {
     <h1>
       Restaurant ${name}
     </h1>
-    <restaurants>
-      <restaurant tabindex="0" aria-label="">
-       <panel-img>
-          <container-button-like>
-          </container-button-like>
+    <div class="restaurants">
+      <div class="restaurant" tabindex="0" aria-label="">
+       <div class="panel-img">
+          <div class="container-button-like">
+          </div>
           <img class="lazyload" src="${BASE_IMAGE_URL}medium/${pictureId}" alt="${name}">
-       </panel-img>
-       <content>
+       </div>
+       <div class="content">
           <h2>
             Rating
           </h2>
           <p class="description">
-            <star>${rating}</star>
+            <span class="star">${rating}</span>
           </p>
           <h2>
             Kategori Menu
@@ -87,13 +87,13 @@ const createRestaurantDetailTemplate = async (restorant) => {
           <p class="description">
             ${description}
           </p>
-       </content>
-      </restaurant>
-      <restaurant tabindex="0" aria-label="">
-       <panel-img>
+       </div>
+      </div>
+      <div class="restaurant" tabindex="0" aria-label="">
+       <div class="panel-img">
           <img class="lazyload" src="images/illustration/foodanddrink.jpg" alt="Gambar Ilustrasi Makana dan Minuman">
-       </panel-img>
-       <content>
+       </div>
+       <div class="content">
           <h2>
             Daftar Makanan
           </h2>
@@ -110,29 +110,29 @@ const createRestaurantDetailTemplate = async (restorant) => {
               ${foodElementLi}
             </li>
           </ul>
-       </content>
-      </restaurant>
-      <restaurant tabindex="0" aria-label="">
-       <panel-img>
+       </div>
+      </div>
+      <div class="restaurant" tabindex="0" aria-label="">
+       <div class="panel-img">
           <img class="lazyload" src="images/illustration/review.jpg" alt="Gambar Ilustrasi Review">
-       </panel-img>
-       <content-wihtout-padding>
+       </div>
+       <div class="content-wihtout-padding">
           <h2>
             Review
           </h2>
-          <review-box>
-            <loading-screen>
+          <div class="review-box">
+            <div class="loading-screen">
               <div class="loading">
                 <div></div><div></div><div></div><div></div>
               </div>
-              <loading-text>
+              <div class="loading-text">
                 Loading ...
-              </loading-text>
-            </loading-screen>
-          </review-box>
-       </content-wihtout-padding>
-      </restaurant>
-    </restaurants>
+              </div>
+            </div>
+          </div>
+       </div>
+      </div>
+    </div>
   `;
 };
 

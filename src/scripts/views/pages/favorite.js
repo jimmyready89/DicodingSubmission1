@@ -9,16 +9,16 @@ const favorite = {
           <h1 tabindex="0">
             Favorite
           </h1>
-          <restaurants id="restaurant-list">
-            <loading-screen>
+          <div class="restaurants" id="restaurant-list">
+            <div class="loading-screen">
               <div class="loading">
                 <div></div><div></div><div></div><div></div>
               </div>
-              <loading-text>
+              <div class="loading-text">
                 Loading ...
-              </loading-text>
-            </loading-screen>
-          </restaurants>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     `;
@@ -36,16 +36,16 @@ const favorite = {
         });
       } else {
         restaurantContainer.innerHTML = `
-          <error-message>
+          <span class="error-message">
             Tidak terdapat data
-          </error-message>
+          </span>
         `;
       }
     } catch {
       restaurantContainer.innerHTML = `
-        <error-message>
+        <span class="error-message">
           Data Gagal dimuat
-        </error-message>
+        </span>
       `;
     }
   },

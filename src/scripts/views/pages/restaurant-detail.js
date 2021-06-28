@@ -9,14 +9,14 @@ const restaurantDetail = {
     return `
       <section class="content">
         <div class="latest" id="restaurant-detail">
-          <loading-screen>
+          <div class="loading-screen">
             <div class="loading">
               <div></div><div></div><div></div><div></div>
             </div>
-            <loading-text>
+            <div class="loading-text">
               Loading Detail Restoran ...
-            </loading-text>
-          </loading-screen>
+            </div>
+          </div>
         </div>
       </section>
     `;
@@ -31,19 +31,19 @@ const restaurantDetail = {
       restaurantContainer.innerHTML = await createRestaurantDetailTemplate(restaurantDetailResault);
 
       reviewInitiator.init({
-        riviewElemenet: document.querySelector('review-box'),
+        riviewElemenet: document.querySelector('.review-box'),
         restaurantDetailData: restaurantDetailResault.restaurant,
       });
 
       buttonLikeInitiator.init({
-        elemeentButton: document.querySelector('container-button-like'),
+        elementButton: document.querySelector('.container-button-like'),
         restaurantDetail: restaurantDetailResault.restaurant,
       });
     } catch {
       restaurantContainer.innerHTML = `
-        <error-message>
+        <span class="error-message">
           Data Gagal dimuat
-        </error-message>
+        </span>
       `;
     }
   },

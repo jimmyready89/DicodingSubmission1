@@ -11,17 +11,20 @@ const reviewInitiator = {
       date, name, review,
     } = riviewData;
 
-    const reviewRowTag = document.createElement('review-row');
+    const reviewRowTag = document.createElement('div');
+    reviewRowTag.classList.add('review-row');
 
     const nameTag = document.createElement('name');
     nameTag.innerText = name;
     reviewRowTag.appendChild(nameTag);
 
-    const reviewTag = document.createElement('review');
+    const reviewTag = document.createElement('div');
+    reviewTag.classList.add('review');
     reviewTag.innerText = review;
     reviewRowTag.appendChild(reviewTag);
 
-    const dateTag = document.createElement('date');
+    const dateTag = document.createElement('div');
+    dateTag.classList.add('date');
     dateTag.innerText = date;
     reviewRowTag.appendChild(dateTag);
 

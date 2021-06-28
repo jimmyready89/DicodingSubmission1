@@ -72,17 +72,17 @@
 			column-gap: 10px;
 			grid-template-columns: repeat(2, 1fr);
 
-			restaurant {
+			.restaurant {
 				img {
 					height: 225px;
 					width: 60%;
 				}
 
-				content {
+				.content {
 					padding: 0px 15px 15px 15px;
 				}
 
-				content, content-wihtout-padding {
+				.content, .content-wihtout-padding {
 					h2 {
 						font-weight: 500;
 						font-size: 21px;
@@ -136,7 +136,7 @@
 		max-width: 1200px;
 
 		article {
-			figure {
+			.figure {
 				grid-template-columns: repeat(2, 1fr);
 
 				img {
@@ -168,20 +168,20 @@
 	}
 
 	.content {
-		restaurants {
+		.restaurants {
 			column-gap: 10px;
 			grid-template-columns: repeat(3, 1fr);
 
-			restaurant {
+			.restaurant {
 				img {
 					height: 250px;
 				}
 
-				content {
+				.content {
 					padding: 0px 32px 32px 32px;
 				}
 
-				content, content-wihtout-padding {
+				.content, .content-wihtout-padding {
 					h2 {
 						font-weight: 500;
 						font-size: 25px;

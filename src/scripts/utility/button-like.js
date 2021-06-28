@@ -2,8 +2,8 @@ import favoriteRestaurantIdb from '../data/favorite-restaurant-idb';
 import { createLikeButton, createUnlikeButton } from '../views/templates/template-ui';
 
 const buttonLikeInitiator = {
-  async init({ elemeentButton, restaurantDetail }) {
-    this.elemeentButton = elemeentButton;
+  async init({ elementButton, restaurantDetail }) {
+    this.elementButton = elementButton;
     this.restaurantDetail = restaurantDetail;
     
     await this.render();
@@ -25,7 +25,7 @@ const buttonLikeInitiator = {
   },
 
   renderLike() {
-    this.elemeentButton.innerHTML = createLikeButton();
+    this.elementButton.innerHTML = createLikeButton();
 
     const likeButton = document.querySelector('#likeButton');
     likeButton.addEventListener('click', () => {
@@ -35,7 +35,7 @@ const buttonLikeInitiator = {
   },
 
   renderUnlike() {
-    this.elemeentButton.innerHTML = createUnlikeButton();
+    this.elementButton.innerHTML = createUnlikeButton();
 
     const likeButton = document.querySelector('#likeButton');
     likeButton.addEventListener('click', async () => {

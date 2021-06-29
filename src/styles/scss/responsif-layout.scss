@@ -102,6 +102,10 @@
 }
 
 @media screen and (min-width: 750px) {
+	.banner {
+		background-image: url("../../public/images-not-copying/heros/hero-image_4-large.jpg");
+	}
+
 	.latest {
 		width: 100%;
 		margin: 60px auto;

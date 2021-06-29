@@ -11,21 +11,21 @@ exports.config = {
     Playwright: {
       url: 'http://localhost:10000',
       show: true,
-      browser: 'chromium'
-    }
+      browser: 'chromium',
+    },
   },
   include: {
-    I: './steps_file.js'
+    I: './steps_file.js',
   },
   bootstrap: null,
   mocha: {},
   name: 'Submision',
   plugins: {
     retryFailedStep: {
-      enabled: true
+      enabled: true,
     },
     screenshotOnFail: {
-      enabled: true
-    }
-  }
-}
+      enabled: true,
+    },
+  },
+};

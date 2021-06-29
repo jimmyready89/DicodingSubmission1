@@ -2,8 +2,8 @@ const sharp = require('sharp');
 const fs = require('fs');
 const path = require('path');
 
-const target = path.resolve(__dirname, 'src/public/images/heros');
-const destination = path.resolve(__dirname, 'dist/images/heros');
+const target = path.resolve(__dirname, 'src/public/images-not-copying/heros-source');
+const destination = path.resolve(__dirname, 'src/public/images-not-copying/heros');
 
 if (!fs.existsSync(destination)) {
   fs.mkdirSync(destination);

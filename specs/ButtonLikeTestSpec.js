@@ -12,7 +12,7 @@ describe('Menyukai restaurant', () => {
 
   it('tombol yang muncul harus tombol menyukai restaurant', async () => {
     await buttonLikeInitiator.init({
-      elemeentButton: document.querySelector('#likeButton'),
+      elementButton: document.querySelector('#likeButton'),
       restaurantDetail: {
         id: 1,
       },
@@ -23,7 +23,7 @@ describe('Menyukai restaurant', () => {
 
   it('klik tombol suka', async () => {
     await buttonLikeInitiator.init({
-      elemeentButton: document.querySelector('#likeButton'),
+      elementButton: document.querySelector('#likeButton'),
       restaurantDetail: {
         id: 1,
       },
@@ -33,7 +33,9 @@ describe('Menyukai restaurant', () => {
     const Resto = await favoriteRestaurantIdb.getRestaurant(1);
 
     expect(Resto).toEqual({ id: 1 });
+  });
 
+  afterEach(() => {
     favoriteRestaurantIdb.deleteRestaurant(1);
   });
 });
@@ -46,20 +48,18 @@ describe('Tidak menyukai restaurant', () => {
 
   it('tombol yang muncul harus tombol tidak menyukai restaurant', async () => {
     await buttonLikeInitiator.init({
-      elemeentButton: document.querySelector('#likeButton'),
+      elementButton: document.querySelector('#likeButton'),
       restaurantDetail: {
         id: 1,
       },
     });
 
     expect(document.querySelector('[aria-label="tidak suka dengan restaurant ini"]')).toBeTruthy();
-
-    favoriteRestaurantIdb.deleteRestaurant(1);
   });
 
   it('klik tombol tidak suka', async () => {
     await buttonLikeInitiator.init({
-      elemeentButton: document.querySelector('#likeButton'),
+      elementButton: document.querySelector('#likeButton'),
       restaurantDetail: {
         id: 1,
       },
@@ -69,5 +69,9 @@ describe('Tidak menyukai restaurant', () => {
     const Resto = await favoriteRestaurantIdb.getRestaurant(1);
 
     expect(Resto).not.toEqual({ id: 1 });
+  });
+
+  afterEach(() => {
+    favoriteRestaurantIdb.deleteRestaurant(1);
   });
 });
